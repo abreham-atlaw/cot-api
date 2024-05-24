@@ -132,7 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-ETHER_NODE_URL = "http://localhost:8545"
+ETHER_NODE_URL = "http://cot.alwaysdata.net"
 
 AUTH_USER_MODEL = 'authentication.CoTUser'
 
@@ -145,6 +145,6 @@ EMAIL_SOURCE = "grandbwk@grandbluenet.com"
 EMAIL_HOST_PASSWORD = "5.@O7L+B)N85vVn[nqJ"
 EMAIL_TEMPLATE_DIR = BASE_DIR / "res/mail/"
 
-FRONTEND_URL = "http://localhost:5173"
+FRONTEND_URL = "https://cot.vercel.app"
 
 RESET_TOKEN_LIFETIME = 100*60
