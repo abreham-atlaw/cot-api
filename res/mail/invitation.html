@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Invitation</title>
+    <style>
+        body {
+            color: #000;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .button {
+            display: inline-block;
+            color: #fff;
+            background-color: #000;
+            padding: 10px 20px;
+            margin: 10px 0px;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Complete your Profile</h2>
+        <p>
+            Hello, you have been invited by an admin to join {{ organization_name }}. We are excited to have you on board.
+        </p>
+        <p>
+            Please click the link below to finish setting up your profile:
+        </p>
+        <p>
+            <a href="{{ signup_link }}" class="button">Finish Profile Setup</a>
+        </p>
+        <p>
+            If you have any questions, feel free to reach out to us.
+        </p>
+        <p>
+            Best regards,<br>
+            Chain of Trust
+        </p>
+    </div>
+</body>
+</html>
