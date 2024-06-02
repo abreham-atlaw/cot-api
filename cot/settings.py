@@ -145,6 +145,6 @@ EMAIL_SOURCE = "grandbwk@grandbluenet.com"
 EMAIL_HOST_PASSWORD = "5.@O7L+B)N85vVn[nqJ"
 EMAIL_TEMPLATE_DIR = BASE_DIR / "res/mail/"
 
-FRONTEND_URL = "https://cot.vercel.app"
+FRONTEND_URL = "https://cot-et.vercel.app"
 
 RESET_TOKEN_LIFETIME = 100*60
