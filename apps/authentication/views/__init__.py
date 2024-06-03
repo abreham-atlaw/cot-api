@@ -4,3 +4,4 @@ from .invite_view import *
 from .request_password_reset_view import *
 from .verify_reset_view import *
 from .reset_password_view import *
+from .change_password_view import ChangePasswordView

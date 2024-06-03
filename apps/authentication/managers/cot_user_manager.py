@@ -26,3 +26,15 @@ class CoTUserManager(BaseUserManager):
 	def get_key_pair(self, user, password) -> typing.Tuple[str, str]:
 		encryptor = Encryptor(password)
 		return encryptor.decrypt(user.public_key), encryptor.decrypt(user.private_key)
+	
+	def set_password(self, user, old_password: str, new_password: str):
+		old_encryptor = Encryptor(old_password)
+		new_encryptor = Encryptor(new_password)
+		
+		user.public_key, user.private_key = [
+			new_encryptor.encrypt(old_encryptor.decrypt(key))
+			for key in [user.public_key, user.private_key]
+		]
+
+		user.set_password(new_password)
+		user.save()
