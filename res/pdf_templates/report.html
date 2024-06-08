@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>Summary Report</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Summary Report</h1>
+
+    <h2>Asset Summary</h2>
+    <table>
+        <tr>
+            <th>Total Assets</th>
+            <th>Allocated Assets</th>
+            <th>Unallocated Assets</th>
+        </tr>
+        <tr>
+            <td>{{ asset_summary.total_assets }}</td>
+            <td>{{ asset_summary.allocated_assets }}</td>
+            <td>{{ asset_summary.unallocated_assets }}</td>
+        </tr>
+    </table>
+
+    <h2>Asset Category Summary</h2>
+    <table>
+        <tr>
+            <th>Total Categories</th>
+        </tr>
+        <tr>
+            <td>{{ asset_category_summary.total_categories }}</td>
+        </tr>
+    </table>
+
+    <h2>Maintenance Request Summary</h2>
+    <table>
+        <tr>
+            <th>Total Requests</th>
+            <th>Pending Requests</th>
+            <th>Approved Requests</th>
+            <th>Rejected Requests</th>
+        </tr>
+        <tr>
+            <td>{{ maintenance_request_summary.total_requests }}</td>
+            <td>{{ maintenance_request_summary.pending_requests }}</td>
+            <td>{{ maintenance_request_summary.approved_requests }}</td>
+            <td>{{ maintenance_request_summary.rejected_requests }}</td>
+        </tr>
+    </table>
+
+    <h2>Asset Request Summary</h2>
+    <table>
+        <tr>
+            <th>Total Requests</th>
+            <th>Pending Requests</th>
+            <th>Approved Requests</th>
+            <th>Rejected Requests</th>
+        </tr>
+        <tr>
+            <td>{{ asset_request_summary.total_requests }}</td>
+            <td>{{ asset_request_summary.pending_requests }}</td>
+            <td>{{ asset_request_summary.approved_requests }}</td>
+            <td>{{ asset_request_summary.rejected_requests }}</td>
+        </tr>
+    </table>
+
+    <h2>Profile Summary</h2>
+    <table>
+        <tr>
+            <th>Total Profiles</th>
+        </tr>
+        <tr>
+            <td>{{ profile_summary.total_profiles }}</td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -145,6 +145,13 @@ EMAIL_SOURCE = "grandbwk@grandbluenet.com"
 EMAIL_HOST_PASSWORD = "5.@O7L+B)N85vVn[nqJ"
 EMAIL_TEMPLATE_DIR = BASE_DIR / "res/mail/"
 
+MEDIA_PATH = BASE_DIR / "media"
+
+BMC_EXPORT_PATH = MEDIA_PATH/"bmc_exports"
+
 FRONTEND_URL = "https://cot-et.vercel.app"
 
 RESET_TOKEN_LIFETIME = 100*60
+
+DRIVE_HOST = "https://bareknuckle-seaman.000webhostapp.com/"
+

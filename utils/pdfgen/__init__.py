@@ -1,0 +1,1 @@
+from .report_pdf_generator import ReportPDFGenerator
