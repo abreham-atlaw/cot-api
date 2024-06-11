@@ -155,3 +155,6 @@ RESET_TOKEN_LIFETIME = 100*60
 
 DRIVE_HOST = "https://bareknuckle-seaman.000webhostapp.com/"
 
+GEMINI_API_KEY = "AIzaSyBvgRYFCdvAyMRfIjRPsbA1RgGGO9oJbJs"
+
+LLM_TEMPERATURE = 0.00
