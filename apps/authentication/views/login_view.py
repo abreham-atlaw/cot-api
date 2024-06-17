@@ -4,7 +4,8 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.authentication.serializers import KeyPairSerializer
+from apps.authentication.models import CoTUser
+from apps.authentication.serializers import KeyPairSerializer, SymmetricKeySerializer
 
 
 class LoginView(APIView):
@@ -28,8 +29,11 @@ class LoginView(APIView):
 			return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
 		serializer = KeyPairSerializer(instance=user, password=password)
-
+		keys_serializer = SymmetricKeySerializer(instance=CoTUser.objects.get_contract_keys(user, password), many=True)
 		return Response(
-			data=serializer.data,
+			data={
+				"key_pair": serializer.data,
+				"contract_keys": keys_serializer.data
+			},
 			status=status.HTTP_200_OK
 		)

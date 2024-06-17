@@ -5,3 +5,5 @@ from .request_password_reset_view import *
 from .verify_reset_view import *
 from .reset_password_view import *
 from .change_password_view import ChangePasswordView
+from .create_org_keys_view import CreateOrganizationKeysView
+from .get_org_keys_view import GetOrgKeysView

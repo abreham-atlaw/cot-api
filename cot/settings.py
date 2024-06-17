@@ -132,7 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-ETHER_NODE_URL = "http://cot.alwaysdata.net"
+ETHER_NODE_URL = "https://demo.edventures.ai:8545"
 
 AUTH_USER_MODEL = 'authentication.CoTUser'
 
@@ -144,6 +144,7 @@ EMAIL_HOST_USER = "_mainaccount@grandbluenet.com"
 EMAIL_SOURCE = "grandbwk@grandbluenet.com"
 EMAIL_HOST_PASSWORD = "5.@O7L+B)N85vVn[nqJ"
 EMAIL_TEMPLATE_DIR = BASE_DIR / "res/mail/"
+CONTRACTS_PATH = BASE_DIR / "res/contracts"
 
 MEDIA_PATH = BASE_DIR / "media"
 
@@ -158,3 +159,9 @@ DRIVE_HOST = "https://bareknuckle-seaman.000webhostapp.com/"
 GEMINI_API_KEY = "AIzaSyBvgRYFCdvAyMRfIjRPsbA1RgGGO9oJbJs"
 
 LLM_TEMPERATURE = 0.00
+CONTRACTS = [
+	"profile",
+	"department",
+	"asset",
+
+]

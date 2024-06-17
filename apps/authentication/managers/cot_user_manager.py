@@ -2,10 +2,14 @@ import typing
 
 from django.contrib.auth.models import BaseUserManager
 
+from apps.authentication.models.organization_keys import SymmetricKey, PERMISSION_MAP
 from utils.security import Encryptor
+from utils.web3.repositories import ProfileRepository
 
 
 class CoTUserManager(BaseUserManager):
+
+	__profile_repository = ProfileRepository()
 
 	def create_user(self, email, public_key: str, private_key: str, password: str=None, ):
 		if not email:
@@ -38,3 +42,9 @@ class CoTUserManager(BaseUserManager):
 
 		user.set_password(new_password)
 		user.save()
+
+	def get_contract_keys(self, user, password) -> typing.List[SymmetricKey]:
+		public_key, _ = self.get_key_pair(user, password)
+		profile = self.__profile_repository.get_by_user_key(public_key)
+		allowed_contracts = PERMISSION_MAP[profile.role]
+		return SymmetricKey.objects.filter(contract__in=allowed_contracts, organization_key__organization_id=profile.organization_id)

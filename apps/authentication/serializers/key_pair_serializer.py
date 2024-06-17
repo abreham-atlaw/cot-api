@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from apps.authentication.models import CoTUser
+from apps.authentication.serializers import SymmetricKeySerializer
 
 
 class KeyPairSerializer(serializers.Serializer):
@@ -15,3 +16,4 @@ class KeyPairSerializer(serializers.Serializer):
 			"public": key_pair[0],
 			"private": key_pair[1]
 		}
+
